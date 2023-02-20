@@ -38,6 +38,12 @@ function Clock(props) {
 function App() {
 	return (
 		<div className="app">
+			<Clock
+				label="Argentina"
+				timeZone="America/Argentina/Buenos_Aires"
+				countryCode="AR"
+			/>
+
 			<Clock label="Colombia" timeZone="America/Bogota" countryCode="CO" />
 			<Clock label="Ecuador" timeZone="America/Guayaquil" countryCode="EC" />
 			<Clock label="España" timeZone="Europe/Madrid" countryCode="ES" />

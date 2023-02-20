@@ -78,38 +78,7 @@ function App() {
 			<Clock label="Colombia" timeZone="America/Bogota" countryCode="CO" />
 			<Clock label="Venezuela" timeZone="America/Caracas" countryCode="VE" />
 			<Clock label="Ecuador" timeZone="America/Guayaquil" countryCode="EC" />
-
-			<Clock label="Ecuador" timeZone="America/Guayaquil" countryCode="EC" />
 			<Clock label="Venezuela" timeZone="America/Caracas" countryCode="VE" />
-
-			<Clock label="México" timeZone="America/Mexico_City" countryCode="MX" />
-			<Clock label="Perú" timeZone="America/Lima" countryCode="PE" />
-			<Clock label="Honduras" timeZone="America/Tegucigalpa" countryCode="HN" />
-			<Clock
-				label="El Salvador"
-				timeZone="America/El_Salvador"
-				countryCode="SV"
-			/>
-			<Clock
-				label="Puerto Rico"
-				timeZone="America/Puerto_Rico"
-				countryCode="PR"
-			/>
-			<Clock label="Guatemala" timeZone="America/Guatemala" countryCode="GT" />
-			<Clock label="Nicaragua" timeZone="America/Managua" countryCode="NI" />
-			<Clock label="Cuba" timeZone="America/Havana" countryCode="CU" />
-			<Clock label="Bolivia" timeZone="America/La_Paz" countryCode="BO" />
-			<Clock
-				label="República Dominicana"
-				timeZone="America/Santo_Domingo"
-				countryCode="DO"
-			/>
-			<Clock
-				label="Costa Rica"
-				timeZone="America/Costa_Rica"
-				countryCode="CR"
-			/>
-			<Clock label="Panamá" timeZone="America/Panama" countryCode="PA" />
 		</div>
 	);
 }

@@ -2,7 +2,6 @@ import "./App.css";
 
 import React, { useState, useEffect } from "react";
 import ReactCountryFlag from "react-country-flag";
-import Globe from "./Globo";
 
 function Clock(props) {
   const [time, setTime] = useState(
@@ -39,7 +38,6 @@ function Clock(props) {
 function App() {
   return (
     <div className="app">
-      <Globe />
       <Clock label="España" timeZone="Europe/Madrid" countryCode="ES" />
       <Clock
         label="Guinea Ecuatorial"
@@ -64,6 +62,7 @@ function App() {
       />
       <Clock label="Cuba" timeZone="America/Havana" countryCode="CU" />
       <Clock label="Panamá" timeZone="America/Panama" countryCode="PA" />
+      <Clock label="Peru" timeZone="America/Lima" countryCode="PE" />
       <Clock label="Colombia" timeZone="America/Bogota" countryCode="CO" />
 
       <Clock label="Ecuador" timeZone="America/Guayaquil" countryCode="EC" />
@@ -77,7 +76,6 @@ function App() {
         timeZone="America/Costa_Rica"
         countryCode="CR"
       />
-      <Clock label="Peru" timeZone="America/Lima" countryCode="PE" />
     </div>
   );
 }

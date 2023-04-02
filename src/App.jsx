@@ -1,7 +1,15 @@
-import "./App.css";
+import React, {useState, useEffect} from "react"
+import ReactCountryFlag from "react-country-flag"
+import anime from "animejs/lib/anime.es.js"
+import "./App.css"
+import {useDrag} from "react-dnd"
+import {HTML5Backend} from "react-dnd-html5-backend"
 
-import React, { useState, useEffect } from "react";
-import ReactCountryFlag from "react-country-flag";
+const clockSource = {
+  beginDrag(props) {
+    return {id: props.id}
+  }
+}
 
 function Clock(props) {
   const [time, setTime] = useState(
@@ -9,9 +17,9 @@ function Clock(props) {
       timeZone: props.timeZone,
       hourCycle: "h23",
       hour: "2-digit",
-      minute: "2-digit",
+      minute: "2-digit"
     })
-  );
+  )
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -20,24 +28,35 @@ function Clock(props) {
           timeZone: props.timeZone,
           hourCycle: "h23",
           hour: "2-digit",
-          minute: "2-digit",
+          minute: "2-digit"
         })
-      );
-    }, 1000);
-    return () => clearInterval(intervalId);
-  }, [props.timeZone]);
+      )
+    }, 1000)
+    return () => clearInterval(intervalId)
+  }, [props.timeZone])
 
-  const countryCode = props.countryCode.toLowerCase();
+  const countryCode = props.countryCode.toLowerCase()
   return (
-    <p>
+    <p className="clock">
       {props.label} <ReactCountryFlag countryCode={countryCode} svg /> {time}{" "}
     </p>
-  );
+  )
 }
 
 function App() {
+  useEffect(() => {
+    anime({
+      targets: ".clock",
+      translateY: [50, 0],
+      opacity: [0, 1],
+      duration: 800,
+      easing: "easeOutExpo",
+      delay: anime.stagger(18)
+    })
+  }, [])
+
   return (
-    <div className="app">
+    <div className="animacion">
       <Clock label="España" timeZone="Europe/Madrid" countryCode="ES" />
       <Clock
         label="Guinea Ecuatorial"
@@ -67,7 +86,27 @@ function App() {
 
       <Clock label="Ecuador" timeZone="America/Guayaquil" countryCode="EC" />
 
-      <Clock label="México" timeZone="America/Mexico_City" countryCode="MX" />
+      <Clock
+        label="México (Hora del Pacífico)"
+        timeZone="America/Tijuana"
+        countryCode="MX"
+      />
+      <Clock
+        label="México (Hora del Noroeste)"
+        timeZone="America/Hermosillo"
+        countryCode="MX"
+      />
+      <Clock
+        label="México (Hora del Centro)"
+        timeZone="America/Mexico_City"
+        countryCode="MX"
+      />
+      <Clock
+        label="México (Hora del Sureste)"
+        timeZone="America/Cancun"
+        countryCode="MX"
+      />
+
       <Clock label="Honduras" timeZone="America/Tegucigalpa" countryCode="HN" />
       <Clock label="Guatemala" timeZone="America/Guatemala" countryCode="GT" />
       <Clock label="Nicaragua" timeZone="America/Managua" countryCode="NI" />
@@ -77,7 +116,7 @@ function App() {
         countryCode="CR"
       />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

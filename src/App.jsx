@@ -2,8 +2,6 @@ import React, {useState, useEffect} from "react"
 import ReactCountryFlag from "react-country-flag"
 import anime from "animejs/lib/anime.es.js"
 import "./App.css"
-import {useDrag} from "react-dnd"
-import {HTML5Backend} from "react-dnd-html5-backend"
 
 const clockSource = {
   beginDrag(props) {

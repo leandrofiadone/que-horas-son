@@ -1,11 +1,10 @@
-#root {
+.root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
 
-/* Estilos para el contenedor principal */
 .animacion {
   display: flex;
   flex-wrap: wrap;
@@ -17,7 +16,6 @@
   text-align: center;
 }
 
-/* Estilos para cada reloj */
 .clock {
   padding: 1em;
   margin: 2em;
@@ -30,22 +28,17 @@
   transition: transform 0.2s ease-in-out;
 }
 
-/* Estilos para cada reloj al pasar el mouse */
 .clock:hover {
   transform: translateY(-0.2rem);
   box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
 }
 
-/* Estilos para cada reloj al hacer click */
 .clock:active {
   transform: translateY(0.1rem);
   box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos para la animación de entrada de cada reloj */
 .clock.animation {
   opacity: 0;
   transform: translateY(1rem);
 }
-
-/* Estilos para cada reloj cuando se ha completado
